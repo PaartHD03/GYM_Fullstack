@@ -14,7 +14,7 @@ type Props = {
   slug?: string;
 };
 
-type ContentReturn = {
+export type ContentReturn = {
   title: string;
   description: string;
   image: string;

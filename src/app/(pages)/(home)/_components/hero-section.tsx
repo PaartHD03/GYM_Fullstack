@@ -1,6 +1,7 @@
 import { ArrowRightIcon } from "lucide-react"
+import Link from "next/link"
 
-import { Button } from "@/components/ui/button"
+import { buttonVariants } from "@/components/ui/button"
 import { FlipWords } from "@/components/ui/flip-words"
 
 const HeroSection = () => {
@@ -23,12 +24,18 @@ const HeroSection = () => {
 
       {/* content */}
       <div
-        className="container flex items-center justify-end h-full pb-4 z-10 relative flex-col gap-5 text-center"
+        className="container flex items-center justify-end h-full sm:pb-48 pb-40 z-10 relative flex-col gap-5 text-center"
       >
-        <Button size={"lg"} className="min-w-40" variant={"destructive"}>
+        <Link className={buttonVariants({
+          className: "min-w-40",
+          size: "lg",
+          variant: "destructive",
+        })}
+          href={"/getting-started"}
+        >
           <span> Crush It Today</span>
           <ArrowRightIcon className="size-5" />
-        </Button>
+        </Link>
         <h1
           className="text-3xl sm:text-5xl lg:text-7xl font-bold"
         >
@@ -36,7 +43,7 @@ const HeroSection = () => {
         </h1>
         <p className="text-muted-foreground max-w-3xl">Supercharge your workouts. Master your diet. Dominate your fitness goals. GymFluencer puts peak performance in your pocket.</p>
       </div>
-    </section>
+    </section >
   )
 }
 

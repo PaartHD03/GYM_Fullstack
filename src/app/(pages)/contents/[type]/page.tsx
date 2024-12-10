@@ -1,5 +1,6 @@
 import NotFound from "@/components/errors/not-found"
 import ContentCard from "@/components/globals/content-card"
+import CTASection from "@/components/globals/cta-section"
 import { Separator } from "@/components/ui/separator"
 import { getContentList } from "@/helpers/get-content-list"
 
@@ -40,6 +41,9 @@ const Page = async ({ params: { type } }: Props) => {
             />
           ))}
         </div>
+      </div>
+      <div className="mt-32 sm:mt-52">
+        <CTASection />
       </div>
     </div>
   )
