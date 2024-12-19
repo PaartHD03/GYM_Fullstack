@@ -1,77 +1,80 @@
-@import url("https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap");
-
+/* src/app/globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* General Resets */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-background text-textPrimary font-sans leading-relaxed antialiased;
+}
+
+a {
+  @apply text-primary hover:underline transition duration-300 ease-in-out;
+}
+
+button {
+  @apply bg-primary text-white px-4 py-2 rounded-xl shadow hover:bg-primary/90 transition duration-300 ease-in-out;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  @apply font-heading text-textPrimary font-semibold tracking-tight;
+}
+
+p {
+  @apply text-base text-textSecondary leading-6;
+}
+
+/* Utility Classes */
 @layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 142.1 76.2% 36.3%;
-    --primary-foreground: 355.7 100% 97.3%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 142.1 76.2% 36.3%;
-    --radius: 0.5rem;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
-  }
-
-  .dark {
-    --background: 20 14.3% 4.1%;
-    --foreground: 0 0% 95%;
-    --card: 24 9.8% 10%;
-    --card-foreground: 0 0% 95%;
-    --popover: 0 0% 9%;
-    --popover-foreground: 0 0% 95%;
-    --primary: 142.1 70.6% 45.3%;
-    --primary-foreground: 144.9 80.4% 10%;
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 15%;
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 12 6.5% 15.1%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 85.7% 97.3%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 142.4 71.8% 29.2%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-  }
-
-  * {
-    @apply border-border scroll-smooth;
-  }
-  body {
-    @apply bg-background text-foreground font-parkinsans;
-  }
-
-  *::-webkit-scrollbar {
-    @apply hidden;
-  }
-
-  section {
-    @apply scroll-m-28;
+  .grid {
+    @apply gap-4 sm:grid-cols-2 md:grid-cols-3;
   }
 }
+
+.card {
+  @apply bg-white rounded-xl shadow-card p-6 hover:shadow-lg transition-shadow duration-300;
+}
+
+.container {
+  @apply mx-auto max-w-7xl px-4 lg:px-8;
+}
+
+/* Forms */
+input, textarea, select {
+  @apply border border-gray-300 rounded-lg p-2 w-full text-base focus:ring-2 focus:ring-primary focus:outline-none;
+}
+
+label {
+  @apply block text-sm font-medium text-textSecondary mb-2;
+}
+
+/* Custom Components */
+.navbar {
+  @apply flex items-center justify-between py-4 px-6 bg-white shadow-md;
+}
+
+.footer {
+  @apply bg-gray-900 text-white py-6 text-center text-sm;
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Example: Import a Google font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
